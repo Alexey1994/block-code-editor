@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <style>
+        html
+        {
+            font-family: Consolas;
+        }
+
+        if-block
+        {
+            display: block;
+            background-color: #bd6d6d;
+        }
+
+        if-body
+        {
+            display: block;
+            padding: 0 0 10px 20px;
+        }
+
+        while-block
+        {
+            display: block;
+            background-color: #78b78a;
+        }
+
+        while-body
+        {
+            display: block;
+            padding: 0 0 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*function addFunction(name, arguments) {
+            var functionBlock = 
+        }*/
+
+        function addIfBlock(parent, condition) {
+            var ifBlock = document.createElement('if-block')
+                var conditionText = document.createTextNode(condition)
+                ifBlock.appendChild(conditionText)
+
+                var ifBody = document.createElement('if-body')
+                //ifBody.innerHTML = 'Hi'
+                ifBlock.appendChild(ifBody)
+            parent.appendChild(ifBlock)
+
+            return {
+                ifBlock,
+                conditionText,
+                ifBody
+            }
+        }
+
+        function addWhileBlock(parent, condition) {
+            var whileBlock = document.createElement('while-block')
+                var conditionText = document.createTextNode(condition)
+                whileBlock.appendChild(conditionText)
+
+                var whileBody = document.createElement('while-body')
+                //whileBody.innerHTML = 'Hi'
+                whileBlock.appendChild(whileBody)
+            parent.appendChild(whileBlock)
+
+            return {
+                whileBlock,
+                conditionText,
+                whileBody
+            }
+        }
+
+        var t = addIfBlock(document.body, '2 < 3')
+            addWhileBlock(t.ifBody, 'a > b')
+        var tt = addWhileBlock(document.body, 'true')
+
+        //addIfBlock(t.ifBody, 'a > b')
+        //console.log(t)
+    </script>
+</body>
+</html>
